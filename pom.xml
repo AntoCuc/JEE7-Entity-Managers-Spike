@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>co.cucchiara</groupId>
-    <artifactId>JPA-test</artifactId>
+    <artifactId>entity-manager-examples</artifactId>
     <version>0.1</version>
     <packaging>war</packaging>
     <properties>
@@ -12,6 +12,7 @@
         <version.javaee>7.0</version.javaee>
         <version.h2>1.4.191</version.h2>
         <deltaspike.version>1.6.1</deltaspike.version>
+        <deltaspike.cdictrl.version>1.5.4</deltaspike.cdictrl.version>
     </properties>
     <dependencies>
         <dependency>
@@ -64,13 +65,13 @@
         <dependency>
             <groupId>org.apache.deltaspike.cdictrl</groupId>
             <artifactId>deltaspike-cdictrl-weld</artifactId>
-            <version>1.5.4</version>
+            <version>${deltaspike.cdictrl.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.cdictrl</groupId>
             <artifactId>deltaspike-cdictrl-api</artifactId>
-            <version>1.5.4</version>
+            <version>${deltaspike.cdictrl.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
