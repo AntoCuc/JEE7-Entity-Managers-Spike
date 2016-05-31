@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.netbeans.rest.application.config;
+package co.cucchiara.service.service;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
