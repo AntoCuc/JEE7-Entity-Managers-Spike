@@ -38,7 +38,15 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
- * 
+ * Service class leveraging the Java Persistence Api and container based Java
+ * Transaction API.
+ *
+ * <p>
+ * Main characteristic of such a usage is the complete delegation of transaction
+ * handling to the container. The only usage of a persistence abstraction is the
+ * <code>PersistenceContext</code> annotated <code>EntityManager</code>
+ * leveraged by the <code>Facade</code> super class.
+ *
  * @author Antonio Cucchiara
  */
 @Stateless

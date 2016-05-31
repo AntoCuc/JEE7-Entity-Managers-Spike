@@ -42,6 +42,20 @@ import javax.ws.rs.Produces;
 import org.apache.deltaspike.jpa.api.transaction.Transactional;
 
 /**
+ * Service class leveraging the Java Persistence Api and delegating the
+ * management of database transactions to Deltaspike annotation.
+ *
+ * <p>
+ * Main characteristic of such a usage is the manual handling of database
+ * transactions in the Deltaspike <code>Transactional</code> annotation.
+ *
+ * <p>
+ * Manual handling of database transactions offers flexibility but also requires
+ * extra-effort in the design of error handling. Ensuring all state within the
+ * boundary of a transactional annotation boundary gets attached and persisted,
+ * in the event of new state, merged in the case of amended state, deleted, or
+ * rolled back in the event in which an exception occurs is now delegated to the
+ * application itself for manual handling.
  *
  * @author Antonio Cucchiara
  */
@@ -55,7 +69,7 @@ public class BazService {
 
     @POST
     @Consumes({"application/xml", "application/json"})
-    @Transactional
+    @Transactional // This is the Deltaspike NOT the JavaEE @Transactional
     public void create(Baz entity) {
         bazRepository.saveAndFlush(entity);
     }
@@ -63,14 +77,14 @@ public class BazService {
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    @Transactional
+    @Transactional // This is the Deltaspike NOT the JavaEE @Transactional
     public void edit(@PathParam("id") Long id, Baz entity) {
         bazRepository.saveAndFlush(entity);
     }
 
     @DELETE
     @Path("{id}")
-    @Transactional
+    @Transactional // This is the Deltaspike NOT the JavaEE @Transactional
     public void remove(@PathParam("id") Long id) {
         bazRepository.removeAndFlush(bazRepository.findBy(id));
     }
@@ -98,7 +112,7 @@ public class BazService {
     @GET
     @Path("count")
     @Produces("text/plain")
-    @Transactional
+    @Transactional // This is the Deltaspike NOT the JavaEE @Transactional
     public String countREST() {
         return String.valueOf(bazRepository.count());
     }

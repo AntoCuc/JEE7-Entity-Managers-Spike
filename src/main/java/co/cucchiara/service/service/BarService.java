@@ -31,7 +31,6 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
-import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -42,6 +41,20 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
+ * Service class leveraging the Java Persistence Api and managing database
+ * transaction manually at the application layer.
+ *
+ * <p>
+ * Main characteristic of such a usage is the manual handling of database
+ * transactions in the <code>ManagedFacade</code> super class.
+ *
+ * <p>
+ * Manual handling of database transactions offers flexibility but also requires
+ * extra-effort in the design of error handling. Ensuring all state within the
+ * boundary of a transaction boundary gets attached and persisted, in the event
+ * of new state, merged in the case of amended state, deleted or, rolled back in
+ * the event in which an exception occurs is now delegated to the application
+ * itself for manual handling.
  *
  * @author Antonio Cucchiara
  */
