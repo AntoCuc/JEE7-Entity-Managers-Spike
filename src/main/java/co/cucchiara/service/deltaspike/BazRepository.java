@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.cucchiara.service.service.deltaspike;
+package co.cucchiara.service.deltaspike;
 
 import co.cucchiara.model.Baz;
 import org.apache.deltaspike.data.api.EntityRepository;

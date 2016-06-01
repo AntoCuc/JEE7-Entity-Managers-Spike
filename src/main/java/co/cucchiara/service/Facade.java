@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.cucchiara.service.service;
+package co.cucchiara.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;

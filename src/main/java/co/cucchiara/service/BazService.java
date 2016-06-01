@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.cucchiara.service.service;
+package co.cucchiara.service;
 
 import co.cucchiara.model.Baz;
-import co.cucchiara.service.service.deltaspike.BazRepository;
+import co.cucchiara.service.deltaspike.BazRepository;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
